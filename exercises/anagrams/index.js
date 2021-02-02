@@ -9,3 +9,5 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {}
+
+module.exports = anagrams;
