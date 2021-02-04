@@ -39,7 +39,19 @@ class Node {
     }
   }
 
-  contains(data) {}
+  contains(data) {
+    if (this.data === data) {
+      return this;
+    }
+    if (data < this.data && this.left) {
+      return this.left.contains(data);
+    }
+    if (data > this.data && this.right) {
+      return this.right.contains(data);
+    }
+
+    return null;
+  }
 }
 
 const node = new Node(10);
@@ -47,4 +59,6 @@ node.insert(5);
 node.insert(15);
 node.insert(20);
 
-console.log(node);
+console.log(node.contains(20));
+
+// console.log(node);
