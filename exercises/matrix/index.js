@@ -15,6 +15,24 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix(n) {
+  let inner = n;
+  let outer = 0;
+  const res = [];
 
-module.exports = matrix;
+  while (outer < n) {
+    inner = n;
+    res.push([]);
+    while (inner > 0) {
+      // console.log((outer + 1) * n - inner + 1);
+      res[outer].push((outer + 1) * n - inner + 1);
+      inner--;
+    }
+    outer++;
+  }
+
+  console.log(res);
+  return res;
+}
+
+matrix(4);

@@ -5,10 +5,10 @@
 // be less than the length of the list.
 // --- Examples
 //    const list = new List();
-//    list.insertLast('a');
-//    list.insertLast('b');
-//    list.insertLast('c');
-//    list.insertLast('d');
+//    list.insertLast('a');   1.            <-slow
+//    list.insertLast('b');   2. -> fast              slow
+//    list.insertLast('c');                           fast      slow      <---- result
+//    list.insertLast('d');                                     fast
 //    fromLast(list, 2).data // 'b'
 
 function fromLast(list, n) {
