@@ -13,5 +13,3 @@
 //   circular(l) // true
 
 function circular(list) {}
-
-module.exports = circular;
