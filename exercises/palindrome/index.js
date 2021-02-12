@@ -7,6 +7,34 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+export function palindrome(str) {
+  const res = str.split('');
 
-module.exports = palindrome;
+  while (res.length > 1) {
+    if (res.shift() !== res.pop()) return false;
+  }
+
+  return true;
+}
+
+console.log(palindrome('pennep')); //=== true
+
+/*
+
+
+ test('"greetings" is not a palindrome', () => {
+   expect(palindrome('greetings')).toBeFalsy();
+ });
+ 
+ test('"1000000001" a palindrome', () => {
+   expect(palindrome('1000000001')).toBeTruthy();
+ });
+ 
+ test('"Fish hsif" is not a palindrome', () => {
+   expect(palindrome('Fish hsif')).toBeFalsy();
+ });
+ 
+ test('"pennep" a palindrome', () => {
+   expect(palindrome('pennep')).toBeTruthy();
+
+   */
