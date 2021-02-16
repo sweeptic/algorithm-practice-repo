@@ -4,19 +4,18 @@
 // --- Examples
 //   reverse('apple') === 'leppa'
 //   reverse('hello') === 'olleh'
-//   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
-  const t = str.split('');
-  const newArr = [];
+  const word = str.split('');
+  const res = [];
 
-  while (t.length) {
-    newArr.unshift(t.shift());
+  while (word.length) {
+    res.unshift(word.shift());
   }
+  console.log(res.join(''));
 
-  return newArr.join('');
+  return res.join();
 }
 
 reverse('apple');
-
-module.exports = reverse;
+reverse('Greetings!'); //=== '!sgniteerG'
