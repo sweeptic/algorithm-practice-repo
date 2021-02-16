@@ -3,11 +3,21 @@
 // ordering of numbers.
 // --- Examples
 //   reverseInt(15) === 51
-//   reverseInt(981) === 189
-//   reverseInt(500) === 5
-//   reverseInt(-15) === -51
-//   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  let num = n < 0 ? -1 : 1;
 
-module.exports = reverseInt;
+  let res =
+    Math.abs(n)
+      .toString()
+      .split('')
+      .reduceRight((acc, item) => (acc = acc + item)) * num;
+
+  console.log(res);
+  return res;
+}
+
+reverseInt(981) === 189;
+reverseInt(-90) === -9;
+reverseInt(500) === 5;
+reverseInt(-15) === -51;
