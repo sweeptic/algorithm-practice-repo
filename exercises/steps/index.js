@@ -17,6 +17,14 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  const arr = new Array(n).fill(' ');
+  while (n > 0) {
+    arr.unshift('#');
+    arr.pop();
+    console.log(arr);
+    n--;
+  }
+}
 
-module.exports = steps;
+steps(4);
