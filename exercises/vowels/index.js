@@ -7,6 +7,16 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+function vowels(str) {
+  let count = 0;
+  str.split('').map(item => {
+    ['a', 'e', 'i', 'o', 'u'].some(element => item === element)
+      ? count++
+      : null;
+  });
+  return count;
+}
 
-module.exports = vowels;
+console.log(
+  vowels('Why do you ask?') //--> 4
+);
