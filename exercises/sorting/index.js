@@ -24,13 +24,48 @@ function selectionSort(array) {
   return array;
 }
 
-function merge(left, right) {}
+function quickSort(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
 
-function mergeSort(arr) {}
+  const pivot = arr.splice(0, 1);
+  const left = [];
+  const right = [];
 
-function quickSort(left, right) {}
+  arr.map(item => (item < pivot ? left.push(item) : right.push(item)));
+
+  return [...quickSort(left), ...pivot, ...quickSort(right)];
+}
+
+function merge(left, right) {
+  const sorted = [];
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      sorted.push(left.shift());
+    } else {
+      sorted.push(right.shift());
+    }
+  }
+  return [...sorted, ...left, ...right];
+}
+
+function mergeSort(arr) {
+  // console.log(arr);
+
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  const middle = arr.length / 2;
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
 
 //
 // console.log(bubbleSort([5, 3, 2, 4, 100, 6, 34, 22, 17, 9, 1, 10]));
-
-console.log(selectionSort([5, 3, 2, 4, 100, 6, 34, 22, 17, 9, 1, 10]));
+// console.log(selectionSort([5, 3, 2, 4, 100, 6, 34, 22, 17, 9, 1, 10]));
+// console.log(quickSort([5, 3, 2, 4, 100, 6, 34, 22, 17, 9, 1, 10]));
+// console.log(mergeSort([5, 3, 2, 4, 100, 6, 34, 22, 17, 9, 1, 10]));
